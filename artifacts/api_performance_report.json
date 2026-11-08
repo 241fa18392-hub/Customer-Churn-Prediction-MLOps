@@ -1,0 +1,23 @@
+{
+    "requests_sent": 50,
+    "latency_ms": {
+        "min": 2046.77,
+        "max": 2135.23,
+        "mean": 2072.69,
+        "median": 2072.24,
+        "stdev": 17.99
+    },
+    "response_consistency": {
+        "identical_input_produces_identical_output": true,
+        "sample_response": {
+            "predicted_churn": 1,
+            "churn_probability": 0.7319,
+            "model_mode": "primary"
+        }
+    },
+    "throughput": {
+        "duration_seconds": 6.22,
+        "requests_completed": 3,
+        "requests_per_second": 0.48
+    }
+}

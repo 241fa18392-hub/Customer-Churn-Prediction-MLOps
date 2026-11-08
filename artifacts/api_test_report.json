@@ -1,0 +1,121 @@
+{
+    "test_cases": [
+        {
+            "name": "valid_request",
+            "endpoint": "/predict",
+            "expected_status": 200,
+            "actual_status": 200,
+            "status_correct": true,
+            "error_shape_consistent": "n/a (success response)",
+            "overall_pass": true
+        },
+        {
+            "name": "missing_required_field",
+            "endpoint": "/predict",
+            "expected_status": 422,
+            "actual_status": 422,
+            "status_correct": true,
+            "error_shape_consistent": true,
+            "overall_pass": true
+        },
+        {
+            "name": "invalid_datatype_tenure_as_string",
+            "endpoint": "/predict",
+            "expected_status": 422,
+            "actual_status": 422,
+            "status_correct": true,
+            "error_shape_consistent": true,
+            "overall_pass": true
+        },
+        {
+            "name": "invalid_categorical_value",
+            "endpoint": "/predict",
+            "expected_status": 422,
+            "actual_status": 422,
+            "status_correct": true,
+            "error_shape_consistent": true,
+            "overall_pass": true
+        },
+        {
+            "name": "extreme_value_negative_tenure",
+            "endpoint": "/predict",
+            "expected_status": 422,
+            "actual_status": 422,
+            "status_correct": true,
+            "error_shape_consistent": true,
+            "overall_pass": true
+        },
+        {
+            "name": "extreme_value_tenure_over_max",
+            "endpoint": "/predict",
+            "expected_status": 422,
+            "actual_status": 422,
+            "status_correct": true,
+            "error_shape_consistent": true,
+            "overall_pass": true
+        },
+        {
+            "name": "extreme_value_absurd_monthly_charges",
+            "endpoint": "/predict",
+            "expected_status": 422,
+            "actual_status": 422,
+            "status_correct": true,
+            "error_shape_consistent": true,
+            "overall_pass": true
+        },
+        {
+            "name": "corrupted_payload_wrong_type_senior_citizen",
+            "endpoint": "/predict",
+            "expected_status": 422,
+            "actual_status": 422,
+            "status_correct": true,
+            "error_shape_consistent": true,
+            "overall_pass": true
+        },
+        {
+            "name": "corrupted_payload_wrong_structure",
+            "endpoint": "/predict",
+            "expected_status": 422,
+            "actual_status": 422,
+            "status_correct": true,
+            "error_shape_consistent": true,
+            "overall_pass": true
+        },
+        {
+            "name": "batch_empty",
+            "endpoint": "/predict/batch",
+            "expected_status": 400,
+            "actual_status": 400,
+            "status_correct": true,
+            "error_shape_consistent": true,
+            "overall_pass": true
+        },
+        {
+            "name": "batch_one_bad_record_among_good",
+            "endpoint": "/predict/batch",
+            "expected_status": 422,
+            "actual_status": 422,
+            "status_correct": true,
+            "error_shape_consistent": true,
+            "overall_pass": true
+        },
+        {
+            "name": "batch_all_valid",
+            "endpoint": "/predict/batch",
+            "expected_status": 200,
+            "actual_status": 200,
+            "status_correct": true,
+            "error_shape_consistent": "n/a (success response)",
+            "overall_pass": true
+        },
+        {
+            "name": "unmatched_route",
+            "endpoint": "/does-not-exist",
+            "expected_status": 404,
+            "actual_status": 404,
+            "status_correct": true,
+            "error_shape_consistent": true,
+            "overall_pass": true
+        }
+    ]
+}

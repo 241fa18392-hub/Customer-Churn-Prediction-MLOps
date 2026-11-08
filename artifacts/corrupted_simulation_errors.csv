@@ -1,0 +1,8 @@
+schema_context,column,check,failure_case,index
+DataFrameSchema,,column_in_schema,unexpected_column,
+DataFrameSchema,,column_in_dataframe,gender,
+Column,tenure,greater_than_or_equal_to(0),-5,0
+Column,Contract,"isin(['Month-to-month', 'One year', 'Two year'])",Lifetime,1
+Column,MonthlyCharges,dtype('float64'),One Hundred,3
+Column,Churn,"isin(['Yes', 'No'])",Maybe,2
+Column,MonthlyCharges,greater_than_or_equal_to(0.0),"TypeError(""'>=' not supported between instances of 'str' and 'float'"")",

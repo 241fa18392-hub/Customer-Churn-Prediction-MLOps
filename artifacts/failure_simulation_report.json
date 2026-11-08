@@ -1,0 +1,63 @@
+{
+    "scenarios": [
+        {
+            "scenario": "missing_data",
+            "expected_outcome": "halt",
+            "pipeline_exit_code": 1,
+            "outcome_correct": true,
+            "failed_at_stage": "Stage 1 - Pre-Validation (raw schema)",
+            "error_evidence": [
+                "[ERROR] Target file not found at: data/raw/churn.csv"
+            ]
+        },
+        {
+            "scenario": "invalid_datatypes",
+            "expected_outcome": "halt",
+            "pipeline_exit_code": 1,
+            "outcome_correct": true,
+            "failed_at_stage": "Stage 1 - Pre-Validation (raw schema)",
+            "error_evidence": [
+                "[ERROR] Schema Validation FAILED. Corruptions detected.",
+                "  schema_context          column                          check                                                            failure_case index",
+                "0         Column  MonthlyCharges               dtype('float64')                                                             One Hundred     3",
+                "1         Column  MonthlyCharges  greater_than_or_equal_to(0.0)  TypeError(\"'>=' not supported between instances of 'str' and 'float'\")  None",
+                "[INFO] Detailed failure report saved to 'artifacts\\baseline_validation.csv'."
+            ]
+        },
+        {
+            "scenario": "schema_mismatch",
+            "expected_outcome": "halt",
+            "pipeline_exit_code": 1,
+            "outcome_correct": true,
+            "failed_at_stage": "Stage 1 - Pre-Validation (raw schema)",
+            "error_evidence": [
+                "[ERROR] Schema Validation FAILED. Corruptions detected.",
+                "    schema_context    column                                             check failure_case index",
+                "1  DataFrameSchema      None                               column_in_dataframe       gender  None",
+                "0           Column  Contract  isin(['Month-to-month', 'One year', 'Two year'])     Lifetime     1",
+                "[INFO] Detailed failure report saved to 'artifacts\\baseline_validation.csv'."
+            ]
+        },
+        {
+            "scenario": "preprocessing_inconsistency",
+            "expected_outcome": "halt",
+            "pipeline_exit_code": 1,
+            "outcome_correct": true,
+            "failed_at_stage": "Stage 1 - Post-Validation (processed outputs)",
+            "error_evidence": [
+                "[INFO] Validating Preprocessing Outputs...",
+                "[ERROR] Output Validation FAILED!",
+                "  - NaNs detected in X_train after preprocessing.",
+                "  - NaNs detected in X_test after preprocessing."
+            ]
+        },
+        {
+            "scenario": "missing_model_artifact",
+            "expected_outcome": "recover",
+            "pipeline_exit_code": 0,
+            "outcome_correct": true,
+            "failed_at_stage": null,
+            "error_evidence": []
+        }
+    ]
+}

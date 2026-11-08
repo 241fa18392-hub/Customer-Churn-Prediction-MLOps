@@ -1,0 +1,2 @@
+prediction_distribution_ks,prediction_distribution_p_value,prediction_distribution_status,probability_distribution_ks,probability_distribution_p_value,probability_distribution_status
+0.09723207948899928,3.2269653087263898e-06,OK,0.23633782824698368,6.438784639489195e-35,DRIFT

@@ -1,0 +1,26 @@
+{
+    "registry_status": "READY_FOR_DEPLOYMENT",
+    "model_lineage": {
+        "registered_name": "Telco_Churn_Production_Model",
+        "version": 1,
+        "current_stage": "Production",
+        "run_id": "bc9845370a404a36b60420bd7fb25776",
+        "artifact_uri": "models:/m-2615698972aa4eb49c4575976e160dd8"
+    },
+    "performance_metrics": {
+        "recall": 0.7219251336898396,
+        "f1_score": 0.6221198156682027,
+        "roc_auc": 0.8452336665891652,
+        "accuracy": 0.7672107877927609,
+        "precision": 0.5465587044534413
+    },
+    "hyperparameters": {
+        "n_estimators": "150",
+        "max_depth": "12",
+        "random_state": "42",
+        "class_weight": "balanced",
+        "model_family": "RandomForest",
+        "lab": "ML Pipeline"
+    },
+    "preprocessing_dependency": "models/preprocessor.pkl"
+}
